@@ -1,26 +1,18 @@
 ---
-# try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
+theme: ./theme
 background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
+class: text-center
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: false
-# some information about the slides, markdown enabled
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
 
   Learn more at [Sli.dev](https://sli.dev)
-# persist drawings in exports and build
 drawings:
   persist: false
-# use UnoCSS
 css: unocss
+title: Welcome to Slidev
 ---
 
 # Welcome to Slidev
@@ -419,3 +411,60 @@ layout: two-cols
 
 これは左側に表示されます。
 
+---
+
+# Table
+
+---
+
+# Graph
+
+---
+layout:default
+---
+
+# default
+
+default layout
+
+---
+layout: big-points
+title: Need to make a few big points?
+titleRow: true
+---
+
+- Increased font size...
+- ...and centered content
+- help stressing a few points
+
+
+---
+layout: cover
+cover: alt # to enable alternative cover
+clicks: 1
+---
+
+# Vuetiful Theme
+A Vue-inspired theme for my talks about Vue
+
+
+---
+layout: quote
+author: Linus Borg (2021)
+---
+
+# Big quotes make your talk look fancy
+
+
+---
+layout: full-image
+image: coverImage.png # needs to be in /public, path should not have leading slashes
+---
+
+#image
+
+---
+layout: section
+---
+
+# section
