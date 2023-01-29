@@ -16,27 +16,14 @@
 
 // @text_color: when( mode = dark ) #F8F8F2;
 // @text_color: when( mode = dark ) #ff0000;
-.color_mode( @color ) {
-  // @text_color:  #F8F8F2;
-  @text_color: #1900ff;
-  // color: #F8F8F2;
-  color: #96961f;
-  .background_color( @color );
-  .text_color( @color );
-  
+.text_color( @dark ) {
+  // color: when( dark = dark )#F8F8F2; 
+  color: #F8F8F2; 
 }
 
-.color_mode( light ) {
-  @text_color: #ff0000;
-  color: #ff0000;
-}
-
-.text_color( dark ) {
-  color: #ff0000;
-}
-
-.background_color( dark ) {
-  color: #ff0000;
+.markdown-preview_bg( @bg ) {
+  background-color: when( bg = dark )rgb( 39,40,34 );
+  // background-color: rgb( 39,40,34 )
 }
 
 // @text_color: when( mode = dark ) #ff0000;
@@ -58,12 +45,21 @@ body {
 
 // text
 html body p, html body blockquote, html body ul, html body ol, html body dl, html body pre {
-  .color_mode( dark );
+  .text_color( dark );
+
 }
 
 .markdown-preview {
-  // background-color: rgb( 39,40,34 );
+  background-color: rgb( 39,40,34 );
+  // background-color: when( dark = dark ) rgb( 39,40,34 );
+  // .markdown-preview_bg( @mode );
 }
+
+html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p, html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{
+  color: currentcolor;
+}
+
+
 
 
 /*//////////////////////////////////////////////*/
@@ -444,28 +440,37 @@ p > img {
 /* side var */
 /*//////////////////////////////////////////////*/
 // サイドバーTOCを左上にする
-.md-sidebar-toc.md-sidebar-toc {
-  padding-top: 40px;
-  color: #b21010;
+.md-sidebar-toc{
+  padding-top: 50px;
+  color: #4bb210;
 }
 
 #sidebar-toc-btn {
   bottom: unset;
   top: 8px;
-  color: #b21010;
+  color: #4bb210;
 }
+
+.md-toc {
+  padding-top: 50px;
+}
+
+html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+  padding-top: inherit;
+}
+
 html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn {
-  color: #b21010;
+  color: #4bb210;
 }
 
 
-// html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
-//   background-color: rgb( 30,31,28 );
-// }
+html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+  background-color: rgb( 30,31,28 );
+}
 
-// html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn {
-//   color: white;
-// }
+html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn {
+  color: white;
+}
 
 /*//////////////////////////////////////////////*/
 /* code */
