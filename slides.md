@@ -14,6 +14,9 @@ drawings:
   persist: false
 css: unocss
 title: Welcome to Slidev
+
+html:
+  toc: true
 ---
 
 # Welcome to Slidev
@@ -469,7 +472,7 @@ layout: section
 ---
 
 # section
-
+ 
 # 1
 
 ## 2
@@ -482,4 +485,4 @@ layout: section
 
 ###### 6
 
-#####=## 7
+####### 7
